@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HCMIS.Extensions", "HCMIS.Extensions\HCMIS.Extensions.csproj", "{43A9733E-5A20-4282-9CC2-9F25AC50E7FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HCMIS.Extensions.Test", "HCMIS.Extensions.Test\HCMIS.Extensions.Test.csproj", "{EC66DE33-733A-4266-B5D2-E508722BE681}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{AD9B910C-EC5D-47FB-B214-801337C1D98B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43A9733E-5A20-4282-9CC2-9F25AC50E7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A9733E-5A20-4282-9CC2-9F25AC50E7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A9733E-5A20-4282-9CC2-9F25AC50E7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A9733E-5A20-4282-9CC2-9F25AC50E7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC66DE33-733A-4266-B5D2-E508722BE681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC66DE33-733A-4266-B5D2-E508722BE681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC66DE33-733A-4266-B5D2-E508722BE681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC66DE33-733A-4266-B5D2-E508722BE681}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EC66DE33-733A-4266-B5D2-E508722BE681} = {AD9B910C-EC5D-47FB-B214-801337C1D98B}
+	EndGlobalSection
+EndGlobal
