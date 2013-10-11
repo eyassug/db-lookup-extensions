@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using HCMIS.Extensions.Attributes;
 using HCMIS.Extensions.Binding;
-using HCMIS.Extensions.Enums;
-using HCMIS.Extensions.Lookups;
-using HCMIS.Extensions.Models;
 
 namespace HCMIS.Extensions.Services
 {
@@ -48,7 +45,8 @@ namespace HCMIS.Extensions.Services
         #region Private Helpers
         private TType Query(string columnCode, string tableCode)
         {
-            throw new NotImplementedException();
+            var entity = _dbSet.SingleOrDefault(m => m.GetType().GetProperty(columnCode).GetValue(m, null).ToString() == tableCode);
+            return entity;
         }
 
         private string GetTableCode(IConvertible value)
@@ -62,17 +60,14 @@ namespace HCMIS.Extensions.Services
 
             if (attributes.Length > 0)
             {
-                attributes.Where()
-
-                if (attribute != null)
-                {
-                    attributeValue = attribute.Value;
-                }
+                var attribute = attributes.Single(m => m.GetType().IsEquivalentTo(typeof (CodeColumnAttribute)));
+                return attribute.GetType().GetProperty("CodeColumn").GetValue(attribute, null).ToString();
             }
-        }
-            throw new NotImplementedException();
+            return (typeof (TType).Name + "Code");
         }
 
         #endregion
+
+
     }
 }
