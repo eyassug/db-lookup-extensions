@@ -49,12 +49,12 @@ namespace HCMIS.Extensions.Services
             return entity;
         }
 
-        private string GetTableCode(IConvertible value)
+        private static string GetTableCode(IConvertible value)
         {
             throw new NotImplementedException();
         }
 
-        private string GetColumnCode(Type type)
+        private static string GetColumnCode(Type type)
         {
             var attributes = type.GetCustomAttributes(type, false);
 
