@@ -58,7 +58,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BusinessRuleWrapperTest.cs" />
+    <Compile Include="Lookup\Enums.cs" />
+    <Compile Include="Lookup\HCMISEntities.cs" />
+    <Compile Include="Lookup\LookupServiceTest.cs" />
+    <Compile Include="Lookup\Models.cs" />
+    <Compile Include="Lookup\SampleBindingManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
