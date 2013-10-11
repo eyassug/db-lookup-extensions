@@ -10,7 +10,7 @@ namespace HCMIS.Extensions.Test.Lookup
 {
     public class HCMISEntities : DbContext
     {
-        public HCMISEntities() : base("")
+        public HCMISEntities() : base("Data Source=192.168.2.54;Initial Catalog=BETA_HCMISW;UID=hcmis;pwd=hcmis;")
         {
             
         }

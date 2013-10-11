@@ -15,6 +15,7 @@ namespace HCMIS.Extensions.Test.Lookup
         public override void Load()
         {
             Bind<ABC>().To<ABCTypes>();
+            Bind<ReceiptType>().To<ReceiptTypes>();
         }
     }
 }

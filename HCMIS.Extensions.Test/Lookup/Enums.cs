@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HCMIS.Extensions.Attributes;
+﻿using HCMIS.Extensions.Attributes;
 
 namespace HCMIS.Extensions.Test.Lookup.Enums
 {
@@ -17,4 +12,18 @@ namespace HCMIS.Extensions.Test.Lookup.Enums
         [TableCode("F5C2B")]
         C
     }
+
+    [CodeColumn("ReceiptTypeCode")]
+    enum ReceiptTypes
+    {
+        [TableCode("CBFD2")]
+        StandardReceipt,
+        [TableCode("12618")]
+        DeliveryNote,
+        [TableCode("FB6B5")]
+        SRM,
+        [TableCode("1E8F6")]
+        BeginningBalance
+    }
+
 }
