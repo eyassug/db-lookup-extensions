@@ -56,13 +56,9 @@ namespace HCMIS.Extensions.Services
 
         private static string GetColumnCode(Type type)
         {
-            var attributes = type.GetCustomAttributes(type, false);
-
-            if (attributes.Length > 0)
-            {
-                var attribute = attributes.Single(m => m.GetType().IsEquivalentTo(typeof (CodeColumnAttribute)));
-                return attribute.GetType().GetProperty("CodeColumn").GetValue(attribute, null).ToString();
-            }
+            var attribute = (CodeColumnAttribute)Attribute.GetCustomAttribute(type, typeof(CodeColumnAttribute));
+            if (attribute != null)
+                return attribute.CodeColumn;
             return (typeof (TType).Name + "Code");
         }
 
