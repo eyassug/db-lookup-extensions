@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HCMIS.Extensions.Binding;
-using HCMIS.Extensions.Lookups;
 
 namespace HCMIS.Extensions.Services
 {
@@ -25,6 +20,7 @@ namespace HCMIS.Extensions.Services
         public LookupKernel(DbContext dbContext, BindingManager bindingManager) : this(dbContext)
         {
             _bindingManager = bindingManager;
+            _bindingManager.Load(); // Load Bindings
         }
 
         #endregion
