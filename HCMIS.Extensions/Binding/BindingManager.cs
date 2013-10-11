@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using HCMIS.Extensions.Lookups;
 
 namespace HCMIS.Extensions.Binding
 {
     public abstract class BindingManager
     {
         #region Dictionary
-        private static Dictionary<Type, Type> _bindings;
+        protected static Dictionary<Type, Type> _bindings;
 
         #endregion
 
