@@ -51,13 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\BusinessRuleWrapper.cs" />
-    <Compile Include="Business\Rule.cs" />
-    <Compile Include="ExtensionsModule.cs" />
+    <Compile Include="Attributes\CodeColumnAttribute.cs" />
+    <Compile Include="Attributes\ModelClassAttribute.cs" />
+    <Compile Include="Attributes\TableCodeAttribute.cs" />
+    <Compile Include="Enums\ReceiptTypes.cs" />
+    <Compile Include="Binding\BindingManager.cs" />
+    <Compile Include="Binding\BindType.cs" />
+    <Compile Include="Services\ILookupKernel.cs" />
+    <Compile Include="Services\ILookupService.cs" />
+    <Compile Include="Services\LookupKernel.cs" />
+    <Compile Include="Services\LookupService.cs" />
     <Compile Include="Models\BusinessRule.cs" />
-    <Compile Include="Repository\BusinessRuleEntities.cs" />
-    <Compile Include="Repository\BusinessRuleRepository.cs" />
-    <Compile Include="Business\IBusinessRuleWrapper.cs" />
+    <Compile Include="Models\ReceiptType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,6 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

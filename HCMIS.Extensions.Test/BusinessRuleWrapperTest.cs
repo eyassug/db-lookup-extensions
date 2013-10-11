@@ -6,10 +6,9 @@ using Ninject;
 
 namespace HCMIS.Extensions.Test
 {
-    [TestClass]
     public class BusinessRuleWrapperTest
     {
-        private readonly IKernel _kernel;
+        static IKernel _kernel;
 
         #region Constructors
         public BusinessRuleWrapperTest()
