@@ -5,24 +5,24 @@ namespace HCMIS.Extensions.Test.Lookup.Enums
     [CodeColumn("ABCCode")]
     enum ABCTypes
     {
-        [TableCode("E0F19")]
+        [TableCode("CODEA")]
         A,
-        [TableCode("8C5BF")]
+        [TableCode("CODEB")]
         B,
-        [TableCode("F5C2B")]
+        [TableCode("CODEC")]
         C
     }
 
     [CodeColumn("ReceiptTypeCode")]
     enum ReceiptTypes
     {
-        [TableCode("CBFD2")]
+        [TableCode("STDR")]
         StandardReceipt,
-        [TableCode("12618")]
+        [TableCode("DN")]
         DeliveryNote,
-        [TableCode("FB6B5")]
+        [TableCode("SRM")]
         SRM,
-        [TableCode("1E8F6")]
+        [TableCode("BB")]
         BeginningBalance
     }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,16 @@ namespace HCMIS.Extensions.Test.Lookup
 {
     public class HCMISEntities : DbContext
     {
-        public HCMISEntities() : base("Data Source=192.168.2.54;Initial Catalog=BETA_HCMISW;UID=hcmis;pwd=hcmis;")
+        public HCMISEntities()
+            : base(new SqlCeConnection("Data Source=TestDb.sdf;Persist Security Info=False;"),true)
         {
             
+        }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new DropCreateDatabaseAlways<HCMISEntities>());
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<ABC> Abcs { get; set; }

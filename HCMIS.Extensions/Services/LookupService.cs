@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
+using System.Linq.Expressions;
 using HCMIS.Extensions.Attributes;
 using HCMIS.Extensions.Binding;
 
@@ -45,13 +46,23 @@ namespace HCMIS.Extensions.Services
         #region Private Helpers
         private TType Query(string columnCode, string tableCode)
         {
-            var entity = _dbSet.SingleOrDefault(m => m.GetType().GetProperty(columnCode).GetValue(m, null).ToString() == tableCode);
-            return entity;
+            //Since a lambda expression with reflection can't be pass as it is we need to use a expression tree
+            //otherwise this generates an error
+            //var entity = _dbSet.SingleOrDefault(m => m.GetType().GetProperty(columnCode).GetValue(m, null).Equals(tableCode));
+            var param = Expression.Parameter(typeof(TType));
+            // create expression for param => param.TEntityNameId == PrimaryKey
+            var lambda = Expression.Lambda<Func<TType, bool>>(
+                Expression.Equal(Expression.Property(param, columnCode),Expression.Constant(tableCode)),param);
+            return _dbSet.SingleOrDefault(lambda);
         }
 
         private static string GetTableCode(IConvertible value)
         {
-            throw new NotImplementedException();
+            var type = value.GetType();
+            var memInfo = type.GetMember(value.ToString());
+            var attributes = memInfo[0].GetCustomAttributes(typeof(TableCodeAttribute),false);
+            var description = ((TableCodeAttribute)attributes[0]).TableCode;
+            return description;
         }
 
         private static string GetColumnCode(Type type)
