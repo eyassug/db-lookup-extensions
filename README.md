@@ -1,4 +1,4 @@
-HCMIS-Extension
+db-lookup-extensions
 ===============
 
-A set of reusable components to be used by HCMIS Warehouse and supporting applications as well as Reporting Dashboards
+A reusable component that maps lookup values in databases to .NET Enums using EntityFramework and declarative attributes.
